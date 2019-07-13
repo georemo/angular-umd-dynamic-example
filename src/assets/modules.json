@@ -24,5 +24,11 @@
         "location": "./assets/moduled.umd.js",
         "moduleName": "ModuledModule",
         "description": "default subnavigation with 3 components and some clarity stuff"
+    },
+    {
+        "path": "modulef",
+        "location": "./assets/modulef.umd.js",
+        "moduleName": "ModulefModule",
+        "description": "testing new module"
     }
 ]

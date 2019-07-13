@@ -28,6 +28,12 @@
       ],
       "moduled": [
         "dist/moduled"
+      ],
+      "modulef": [
+        "dist/modulef"
+      ],
+      "modulef/*": [
+        "dist/modulef/*"
       ]
     }
   }

@@ -15,7 +15,8 @@ By default I've added the UMD bundles from ModuleA, ModuleB, ModuleC and ModuleD
 
 ## Updating a module/library
 When you want to make updates to one of the existing modules you can just update the source files in 'projects/(moduletoedit)/src/lib' and rebuilding that specific module with the Angular CLI;
-> ng build (module/libraryName)
+> cd <module-directory>/moduleName
+> ng build libraryName
 
 After build you're able to replace the contents of that module in the 'assets' folder in either the dist folder or on the hosted environment. If you've added new dependencies like third party libraries and want to use them in the library. Make sure to update the 'modules' array in the module.service.ts and recompile.
 

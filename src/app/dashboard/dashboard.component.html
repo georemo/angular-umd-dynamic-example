@@ -25,7 +25,16 @@
                 {{ module.description }} 
             </div>
             <div class="card-footer">
-                    <button class="btn btn-primary" (click)="enableModule(module)">Enable</button>
+                    <button class="btn btn-primary" (click)="enableModule(module)">
+                        <ng-template *ngIf="module.registered;then showEnabled; else showDisabled">
+                        </ng-template>
+                        <ng-template #showEnabled>
+                          Enabled
+                        </ng-template>
+                        <ng-template #showDisabled>
+                          Disabled
+                        </ng-template>
+                    </button>
             </div>
         </div>
     </div>

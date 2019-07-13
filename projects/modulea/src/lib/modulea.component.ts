@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-modulea',
-  template: `
+    selector: 'lib-modulea',
+    template: `
   <form>
   <section class="form-block">
-      <label>Input Fields</label>
+      <label> {{title}} </label>
       <div class="form-group">
           <label for="formFields_1">Textbox [type="text"]</label>
           <input type="text" id="formFields_1" placeholder="Email" size="35" disabled>
@@ -47,13 +47,13 @@ import { Component, OnInit } from '@angular/core';
 </form>  
   
   `,
-  styles: []
+    styles: []
 })
 export class ModuleaComponent implements OnInit {
+    title = 'Account Setting';
+    constructor() { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

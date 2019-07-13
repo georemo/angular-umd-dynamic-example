@@ -34,8 +34,10 @@ export class DashboardComponent implements OnInit {
       // enable or disable module
       if(this.isRegistered(moduleToEnable)) {
           this.routerService.unRegisterRoute(moduleToEnable.path);
+          moduleToEnable.registered = false;
       } else {
           this.registerRoute(moduleToEnable);
+          moduleToEnable.registered = true;
       }
   }
 
@@ -47,7 +49,8 @@ export class DashboardComponent implements OnInit {
       // load up the umd file and register the route whenever succeeded.
       this.moduleService.loadModuleSystemJS(moduleToEnable).then((exports) => {
          this.routerService.createAndRegisterRoute(moduleToEnable, exports);
-      }, (err) => this.showError(`${moduleToEnable.moduleName} could not be found, did you copy the umd file to ${moduleToEnable.location}?`, err));
+      }, (err) => this.showError(`${moduleToEnable.moduleName} could not be found, 
+      did you copy the umd file to ${moduleToEnable.location}?`, err));
   }
 
   private showError(message: string, err) {
