@@ -1,0 +1,166 @@
+================
+ToDo:
+================
+- survey for setting up cd-plugin market/repository
+- categorize menus 
+    - default modules, free modules, licensce types, price field, developer field
+- develop free and commercial module loaders
+    - field for licence type
+- Restructure the layout to allow menu
+    - menu should constitute core menu items + loaded modules
+    - there should be other optional system module that are loadable and shows on the menu when enabled
+- test data sharing between core and hosted modules
+- recreate the project using angular 7
+- upgrade the http(depricated) to recommended
+
+================
+1st Update
+13th July 2019
+================
+- test: update existing module
+    - created and test loaded new module (modulef)
+- test: create and consume a sample module
+    - updated modulea by introducing a property 'title' and setting the value to 'Account Setting'.
+    Then used the above as form heading.
+- sanitize 'enabled'/'disabled' buttons in the dashboard...DONE
+- fork the repository...DONE
+
+================
+Challenges:
+================
+
+================
+Bugs:
+================
+1. Refresh error:
+after running a module then refreshing the page throws an error. 
+However the next refresh attempt gets the page back to normal
+
+
+================
+fork repository
+================
+Georges-MacBook-Pro:sys-core goremo$ git clone https://github.com/georemo/angular-umd-dynamic-example.git
+Cloning into 'angular-umd-dynamic-example'...
+remote: Enumerating objects: 2, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 141 (delta 0), reused 0 (delta 0), pack-reused 139
+Receiving objects: 100% (141/141), 138.67 KiB | 42.00 KiB/s, done.
+Resolving deltas: 100% (49/49), done.
+
+=============
+npm install:
+=============
+Georges-MacBook-Pro:angular-umd-dynamic-example goremo$ npm install
+npm WARN deprecated @angular/http@6.1.10: Switch to @angular/common/http - see https://angular.io/guide/http
+npm WARN deprecated istanbul@0.4.5: This module is no longer maintained, try this instead:
+npm WARN deprecated   npm i nyc
+npm WARN deprecated Visit https://istanbul.js.org/integrations for other alternatives.
+npm WARN deprecated json3@3.3.2: Please use the native JSON object instead of JSON 3
+
+> fsevents@1.2.9 install /Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/fsevents
+> node install
+
+node-pre-gyp WARN Using request for node-pre-gyp https download 
+[fsevents] Success: "/Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/fsevents/lib/binding/Release/node-v64-darwin-x64/fse.node" is installed via remote
+
+> node-sass@4.12.0 install /Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/node-sass
+> node scripts/install.js
+
+Cached binary found at /Users/goremo/.npm/node-sass/4.12.0/darwin-x64-64_binding.node
+
+> core-js@2.6.9 postinstall /Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/core-js
+> node scripts/postinstall || echo "ignore"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+> https://opencollective.com/core-js 
+> https://www.patreon.com/zloirock 
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> node-sass@4.12.0 postinstall /Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/node-sass/vendor/darwin-x64-64/binding.node
+Testing binary
+Binary is fine
+
+> @angular/cli@6.0.8 postinstall /Users/goremo/sys-core/angular-umd-dynamic-example/node_modules/@angular/cli
+> node ./bin/ng-update-message.js
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/compiler@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/forms@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/platform-browser@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/platform-browser-dynamic@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/ui@0.11.34 requires a peer of bootstrap@4.0.0-alpha.5 but none is installed. You must install peer dependencies yourself.
+npm WARN tsickle@0.35.0 requires a peer of typescript@~3.4.1 but none is installed. You must install peer dependencies yourself.
+npm WARN ajv-keywords@3.4.1 requires a peer of ajv@^6.9.1 but none is installed. You must install peer dependencies yourself.
+
+added 1261 packages from 1307 contributors and audited 39812 packages in 153.18s
+found 19 vulnerabilities (12 low, 7 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+  
+=============
+rxjs version mismatch issue: 
+=============
+Original:
+    "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.1.0",
+
+Changed to:
+    "rxjs": "6.0.0",
+    "rxjs-compat": "6.1.0",
+
+
+Generate new library:
+Georges-MacBook-Pro:projects goremo$ ng generate library modulef
+Your global Angular CLI version (8.1.0) is greater than your local
+version (6.0.8). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+CREATE projects/modulef/karma.conf.js (968 bytes)
+CREATE projects/modulef/ng-package.json (183 bytes)
+CREATE projects/modulef/ng-package.prod.json (156 bytes)
+CREATE projects/modulef/package.json (167 bytes)
+CREATE projects/modulef/src/public_api.ts (159 bytes)
+CREATE projects/modulef/src/test.ts (700 bytes)
+CREATE projects/modulef/tsconfig.lib.json (769 bytes)
+CREATE projects/modulef/tsconfig.spec.json (246 bytes)
+CREATE projects/modulef/tslint.json (317 bytes)
+CREATE projects/modulef/src/lib/modulef.module.ts (229 bytes)
+CREATE projects/modulef/src/lib/modulef.component.spec.ts (635 bytes)
+CREATE projects/modulef/src/lib/modulef.component.ts (259 bytes)
+CREATE projects/modulef/src/lib/modulef.service.spec.ts (380 bytes)
+CREATE projects/modulef/src/lib/modulef.service.ts (136 bytes)
+UPDATE angular.json (9966 bytes)
+UPDATE package.json (1648 bytes)
+UPDATE tsconfig.json (714 bytes)
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/compiler@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/forms@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/platform-browser@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/platform-browser-dynamic@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/angular@0.11.34 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @clr/ui@0.11.34 requires a peer of bootstrap@4.0.0-alpha.5 but none is installed. You must install peer dependencies yourself.
+npm WARN ajv-keywords@3.4.1 requires a peer of ajv@^6.9.1 but none is installed. You must install peer dependencies yourself.
+npm WARN tsickle@0.35.0 requires a peer of typescript@~3.4.1 but none is installed. You must install peer dependencies yourself.
+
+audited 39812 packages in 10.767s
+found 19 vulnerabilities (12 low, 7 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+Georges-MacBook-Pro:projects goremo$ 
+
+
+
+
+
+

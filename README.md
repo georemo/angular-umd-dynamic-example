@@ -1,8 +1,13 @@
 # Angular Dynamic UMD Module Loading
-With the use of Angular 6 and the library support of the Angular CLI I've created this repository to provide a (one of many) solution to the dynamic module loading during run-time.
-
-One of the sources guiding me can be found here; [https://github.com/kirjs/angular-dynamic-module-loading](https://github.com/kirjs/angular-dynamic-module-loading).
-
+This is an experimental branch from https://github.com/lmeijdam/angular-umd-dynamic-example.
+Dynamic module loading in Angular has been subject has attracted several developers. 
+Having looked at several efforts and ideas, I have forked this particular one to try and extend it further with some useful features.
+## Target Features:
+1. Side Menu with a menu item holding link to dashboard for managing modules
+2. Enabled Modules should be displayed in the menu list
+3. Interface for downloading remote modules in a secure and procedural way. 
+IDE plugin interfaces are inspiring
+ 
 ## How to start
 Clone or download this repository;
 > git clone https://github.com/lmeijdam/angular-umd-dynamic-example
